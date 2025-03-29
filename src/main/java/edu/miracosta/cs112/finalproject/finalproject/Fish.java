@@ -1,6 +1,33 @@
 package edu.miracosta.cs112.finalproject.finalproject;
 /**
- * Abstract Class that represents a fish in Sierra Trout Quest
+ * Abstract class representing a fish in Sierra Trout Quest.
+ *
+ * Fish (abstract)
+ *
+ * Fish:
+ * -species: String
+ * -description: String
+ * -weight: double
+ * #Fish(species: String, description: String, weight: double)
+ * +getSpecies(): String
+ * +getDescription(): String
+ * +getWeight(): double
+ * +setWeight(weight: double): void
+ * +toString(): String
+ * +fightBehavior(): String [abstract]
+ * +isCorrectAction(playerAction: int): boolean [abstract]
+ *
+ * RainbowTrout:
+ * -boolean isWild
+ * -boolean isJumping
+ * +RainbowTrout(double weight, boolean isWild)
+ * +isWild(): boolean
+ * +isJumping(): boolean
+ * +performJump(): void
+ * +fightBehavior(): String
+ * +isCorrectAction(int playerAction): boolean
+ * +toString(): String
+ *
  */
 public abstract class Fish {
 // Instance variables
