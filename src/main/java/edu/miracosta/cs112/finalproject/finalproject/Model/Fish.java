@@ -1,14 +1,14 @@
-package edu.miracosta.cs112.finalproject.finalproject;
+package edu.miracosta.cs112.finalproject.finalproject.Model;
 /**
  * Abstract class representing a fish in Sierra Trout Quest.
  *
- * Fish (abstract)
+ * edu.miracosta.cs112.finalproject.finalproject.Model.Fish (abstract)
  *
- * Fish:
+ * edu.miracosta.cs112.finalproject.finalproject.Model.Fish:
  * -species: String
  * -description: String
  * -weight: double
- * #Fish(species: String, description: String, weight: double)
+ * #edu.miracosta.cs112.finalproject.finalproject.Model.Fish(species: String, description: String, weight: double)
  * +getSpecies(): String
  * +getDescription(): String
  * +getWeight(): double
@@ -50,7 +50,7 @@ public abstract class Fish {
 
     /**
      * Get species name
-     * @return Fish species
+     * @return edu.miracosta.cs112.finalproject.finalproject.Model.Fish species
      */
     public String getSpecies(){
         return species;

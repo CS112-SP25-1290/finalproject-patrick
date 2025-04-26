@@ -1,7 +1,6 @@
-package edu.miracosta.cs112.finalproject.finalproject;
+package edu.miracosta.cs112.finalproject.finalproject.Model;
 
-public class RainbowTrout extends Fish {
-
+public class GoldenTrout extends Fish {
     // Constants
     public static final int APPLY_PRESSURE = 1;
     public static final int GIVE_SLACK = 2;
@@ -10,25 +9,13 @@ public class RainbowTrout extends Fish {
     private boolean isWild;
     private boolean isJumping;
 
-
-    /**
-     * Full constructor for RainbowTrout
-     * @param weight
-     * @param isWild Whether trout is wild or stocked
-     */
-    public RainbowTrout(double weight, boolean isWild) {
-        super("Rainbow Trout","A colorful trout known for its pink/red band along the sides. They are " +
-                "strong fighters and often jump when hooked. Native to the Pacific coast " +
-                "but widely introduced throughout North America.", weight);
+    public GoldenTrout(double weight, boolean isWild) {
+        super("Golden Trout", "The California golden trout (Oncorhynchus aguabonita or Oncorhynchus mykiss aguabonita) is a species of trout native to California." + "The golden trout has golden flanks with red, horizontal bands along the lateral lines on each side and about 10 dark, vertical, oval marks (called parr marks) on each side." +
+                "In their native habitat, adults range from 6 to 12 inches (15 to 30 cm) long. ", weight);
         this.isWild = isWild;
-        this,isJumping = false;
-
-
-
     }
-
-    public boolean isJumping() {
-        return isJumping;
+    public boolean isWild() {
+        return isWild;
     }
 
     @Override
@@ -41,7 +28,6 @@ public class RainbowTrout extends Fish {
             return "The Rainbow Trout is making a run down stream!";
         }
     }
-
     @Override
     public boolean isCorrectAction(int playerAction) {
         if (isJumping) {
@@ -52,11 +38,10 @@ public class RainbowTrout extends Fish {
     }
 
     @Override
-     public String toString() {
+    public String toString() {
         String wildStatus = isWild ? "Wild" : "Stocked";
 
-            return super.toString() + "\nStatus: " + wildStatus + " " + isJumping;
+        return super.toString() + "\nStatus: " + wildStatus + " " + isJumping;
 
-     }
-
+    }
 }
