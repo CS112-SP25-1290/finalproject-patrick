@@ -9,10 +9,9 @@ This is a base/foundation version of the game that I hope to build on in the fut
 ![Sierra Trout Quest Gameplay](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzNxZnhlZGVhbWxrYjBmbWRiMmRzNzZ4bDJkOHE5MDl5YzNkMDc4YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U0nW3TT2Qa2yIuvozn/giphy.gif)
 
 ## UML Diagram
-![UML Diagram](https://miro.com/app/board/uXjVIK0_Tj8=/?share_link_id=496766102755)
-
+[View UML Diagram on Miro](https://miro.com/app/board/uXjVIK0_Tj8=/?share_link_id=496766102755)
 ## GUI Wireframe
-![GUI Wireframe](https://miro.com/app/board/uXjVIFQatYc=/?share_link_id=862914207459)
+[View GUI Wireframe on Miro](https://miro.com/app/board/uXjVIFQatYc=/?share_link_id=862914207459)
 
 ## Features
 - Interactive fishing mechanics with dynamic fish behaviors
