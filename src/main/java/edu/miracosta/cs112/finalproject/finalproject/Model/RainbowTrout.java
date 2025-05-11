@@ -1,62 +1,66 @@
 package edu.miracosta.cs112.finalproject.finalproject.Model;
 
+/**
+ * Concrete Fish subclass: Rainbow Trout with dynamic behaviors.
+ */
 public class RainbowTrout extends Fish {
+    private final boolean isWild;
+    private String currentBehavior;
+    private String requiredAction;
 
-    // Constants
-    public static final int APPLY_PRESSURE = 1;
-    public static final int GIVE_SLACK = 2;
-    public static final int REEL_IN = 3;
+    // Behavior types
+    private static final String[] BEHAVIORS = {
+            "The trout is making a powerful run downstream!",
+            "The fish is swimming directly towards you!",
+            "The trout jumped high out of the water!",
+            "The fish is diving deep!",
+            "The trout is shaking its head violently!",
+            "The fish is swimming in circles!"
+    };
 
-    private boolean isWild;
-    private boolean isJumping;
+    // Required actions for each behavior
+    private static final String[] ACTIONS = {
+            "Slack",    // for downstream run
+            "Tension",  // for swimming towards
+            "Slack",    // for jumping
+            "Tension",  // for diving deep
+            "Slack",    // for head shaking
+            "Tension"   // for swimming in circles
+    };
 
+    // Instructions for each behavior
+    private static final String[] INSTRUCTIONS = {
+            "Give it slack to prevent line break!",
+            "Add tension to keep the line tight!",
+            "Loosen the line while it's airborne!",
+            "Pull up to prevent it from reaching the bottom!",
+            "Let it thrash to avoid hook pull-out!",
+            "Keep steady pressure to tire it out!"
+    };
 
-    /**
-     * Full constructor for RainbowTrout
-     * @param weight
-     * @param isWild Whether trout is wild or stocked
-     */
-    public RainbowTrout(double weight, boolean isWild) {
-        super("Rainbow Trout","A colorful trout known for its pink/red band along the sides.\nThey are " +
-                "strong fighters and often jump when hooked.\nNative to the Pacific coast " +
-                "but widely introduced throughout North American\n", weight);
+    public RainbowTrout(double baseWeight, boolean isWild) {
+        super("Rainbow Trout",
+                "A colorful trout known for its acrobatic fights and pink stripe.",
+                baseWeight);
         this.isWild = isWild;
-        this.isJumping = false;
-
-
-
     }
 
-    public boolean isJumping() {
-        return isJumping;
-    }
+    public boolean isWild() { return isWild; }
 
     @Override
     public String fightBehavior() {
-        if (Math.random() < 0.6) {
-            isJumping = true;
-            return "The Rainbow Trout jumps out of the water glistening in the sun!";
-        } else {
-            isJumping = false;
-            return "The Rainbow Trout is making a run down stream!";
-        }
+        int behaviorIndex = random.nextInt(BEHAVIORS.length);
+        currentBehavior = BEHAVIORS[behaviorIndex] + "\n" + INSTRUCTIONS[behaviorIndex];
+        requiredAction = ACTIONS[behaviorIndex];
+        return currentBehavior;
     }
 
     @Override
-    public boolean isCorrectAction(int playerAction) {
-        if (isJumping) {
-            return playerAction == GIVE_SLACK;
-        } else {
-            return playerAction == APPLY_PRESSURE || playerAction == REEL_IN;
-        }
+    public boolean isCorrectAction(String playerAction) {
+        return playerAction.equals(requiredAction);
     }
 
-    @Override
-     public String toString() {
-        String wildStatus = isWild ? "Wild" : "Stocked";
-
-            return super.toString() + "\nStatus: " + wildStatus + " " + isJumping;
-
-     }
-
+    public String getRequiredAction() {
+        return requiredAction;
+    }
 }

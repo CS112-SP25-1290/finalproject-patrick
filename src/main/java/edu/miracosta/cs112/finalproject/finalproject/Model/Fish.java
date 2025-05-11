@@ -1,100 +1,101 @@
 package edu.miracosta.cs112.finalproject.finalproject.Model;
+
+import java.util.Random;
+
 /**
- * Abstract class representing a fish in Sierra Trout Quest.
+ * Abstract base class for all fish in Sierra Trout Quest.
+ * Each fish has a species name, description, and randomized weight.
+ * Subclasses must implement their own fighting behaviors.
  *
- * edu.miracosta.cs112.finalproject.finalproject.Model.Fish (abstract)
- *
- * edu.miracosta.cs112.finalproject.finalproject.Model.Fish:
- * -species: String
- * -description: String
- * -weight: double
- * #edu.miracosta.cs112.finalproject.finalproject.Model.Fish(species: String, description: String, weight: double)
- * +getSpecies(): String
- * +getDescription(): String
- * +getWeight(): double
- * +setWeight(weight: double): void
- * +toString(): String
- * +fightBehavior(): String [abstract]
- * +isCorrectAction(playerAction: int): boolean [abstract]
- *
- * RainbowTrout:
- * -boolean isWild
- * -boolean isJumping
- * +RainbowTrout(double weight, boolean isWild)
- * +isWild(): boolean
- * +isJumping(): boolean
- * +performJump(): void
- * +fightBehavior(): String
- * +isCorrectAction(int playerAction): boolean
- * +toString(): String
- *
+ * @author Patrick Eulmi
+ * @version 1.0
+ * @since 2025-05-10
  */
 public abstract class Fish {
-// Instance variables
-    private double weight = 0;
-    private String species  = null;
-    private String description = null;
+    /** The type of fish */
+    private final String species;
 
+    /** Basic info about the fish */
+    private final String description;
+
+    /** How much the fish weighs in pounds */
+    private double weight;
+
+    /** Used to randomize fish weights */
+    protected static final Random random = new Random();
 
     /**
-     * Constructor that creates a fish
-     * @param species the species name of the fish
-     * @param description the description of the fish species
-     * @param weight the weight of the fish in pounds
+     * Creates a new fish with randomized weight.
+     * The weight varies by ±50% from the base weight.
+     *
+     * @param species the type of fish
+     * @param description info about the fish
+     * @param baseWeight starting weight before randomization
      */
-    protected Fish(String species, String description, double weight) {
+    protected Fish(String species, String description, double baseWeight) {
         this.species = species;
         this.description = description;
-        this.weight = weight;
+
+        // Randomize weight: baseWeight ± 50%
+        this.weight = baseWeight + (random.nextDouble() - 0.5) * baseWeight;
+        // Make sure fish weighs at least 0.5 lbs
+        this.weight = Math.max(0.5, this.weight);
     }
 
     /**
-     * Get species name
-     * @return edu.miracosta.cs112.finalproject.finalproject.Model.Fish species
+     * Gets the fish species.
+     * @return the species name
      */
-    public String getSpecies(){
+    public String getSpecies() {
         return species;
     }
 
     /**
-     * Set the weight of the fish
-     * @param weight The new weight
-     */
-    public void setWeight(double weight){
-        this.weight = weight;
-    }
-    /**
-     * Get the weight of the fish
-     * @return The weight in pounds
-     */
-    public double getWeight(){
-        return weight;
-    }
-    /**
-     * Get the species description
-     * @return species description
+     * Gets the fish description.
+     * @return the description
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Determine fish behavior during a fight
-     * Each fish will have a different fight style
-     * @return String description of the fish's fight style
+     * Gets the fish weight.
+     * @return weight in pounds
+     */
+    public double getWeight() {
+        return weight;
+    }
+
+    /**
+     * Sets the fish weight.
+     * @param weight new weight in pounds
+     */
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    /**
+     * Gets what the fish is doing during the fight.
+     * Each type of fish has different behaviors.
+     *
+     * @return text describing the fish's action
      */
     public abstract String fightBehavior();
 
     /**
-     * Determine if the correct action is taken during the fight
-     * @param playerAction The action taken by the player
-     * @return True if the action is correct for the fish behavior
+     * Checks if the player made the right choice.
+     *
+     * @param playerAction what the player chose ("Slack" or "Tension")
+     * @return true if correct, false if wrong
      */
-    public abstract boolean isCorrectAction(int playerAction);
+    public abstract boolean isCorrectAction(String playerAction);
 
+    /**
+     * Shows fish info in a nice format.
+     * @return formatted string with species, weight, and description
+     */
     @Override
     public String toString() {
-        return species + "(" + weight + " lbs) \n" + description;
+        return species + " (" + String.format("%.1f", weight) + " lbs)\n" + description;
     }
-
 }
