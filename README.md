@@ -1,7 +1,7 @@
 # Sierra Trout Quest
 
 ## Description
-Alpha version Sierra Trout Quest is a fishing adventure game where players explore different mountain streams in the Sierra Nevada to catch rainbow trout. Inspired by my own experiences fly fishing in the Eastern Sierra, this game aims to combine strategic gameplay with educational elements about fish behavior. 
+Sierra Trout Quest is a fishing adventure game where players explore different mountain streams in the Sierra Nevada to catch rainbow trout. Inspired by my own experiences fly fishing in the Eastern Sierra, this game aims to combine strategic gameplay with educational elements about fish behavior. 
 Players must read fish movements and choose the correct line tension to successfully land their catch, with each fish having a randomized weight that affects the difficulty of the fight. The game features a level progression system where players unlock new fishing locations by successfully catching fish at previous spots.
 This is a base/foundation version of the game that I hope to build on in the future
 
