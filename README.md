@@ -24,6 +24,7 @@ This is a base/foundation version of the game that I hope to build on in the fut
 ## Technologies Used
 - JavaFX 21
 - FXML for UI layouts
+- AI was used for the art generation
 
 ## Installation
 1. Clone this repository

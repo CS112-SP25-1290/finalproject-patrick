@@ -26,8 +26,8 @@ public class MainApp extends Application {
         if (url == null) throw new RuntimeException("Missing FXML " + fxmlName);
 
         FXMLLoader fx = new FXMLLoader(url);
-        Parent root    = fx.load();
-        Scene  scene   = new Scene(root);
+        Parent root = fx.load();
+        Scene  scene = new Scene(root);
 
         Object c = fx.getController();
         if (c instanceof BaseController bc) bc.setStage(primaryStage);

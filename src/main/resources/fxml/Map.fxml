@@ -11,7 +11,7 @@
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="edu.miracosta.cs112.finalproject.finalproject.controller.MapController">
 
-    <!-- background map -->
+
     <ImageView fitHeight="600.0" fitWidth="800.0" preserveRatio="false"
                AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
                AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
@@ -20,7 +20,7 @@
         </image>
     </ImageView>
 
-    <!-- Level 1: unlocked -->
+
     <Button fx:id="level1Btn"
             layoutX="292.0" layoutY="467.0"
             prefWidth="102.0" prefHeight="37.0"
@@ -32,7 +32,7 @@
         </font>
     </Button>
 
-    <!-- Level 2: locked -->
+
     <Button fx:id="level2Btn"
             layoutX="336.0" layoutY="307.0"
             prefWidth="80.0" prefHeight="30.0"
@@ -44,7 +44,7 @@
         </font>
     </Button>
 
-    <!-- Level 3: locked -->
+
     <Button fx:id="level3Btn"
             layoutX="142.0" layoutY="380.0"
             prefWidth="80.0" prefHeight="30.0"
@@ -56,7 +56,7 @@
         </font>
     </Button>
 
-    <!-- Label to display "level locked" messages -->
+
     <Label fx:id="errorLabel"
            layoutX="10.0" layoutY="560.0"
            text=""

@@ -20,7 +20,7 @@ public class MapController extends BaseController {
     public void initialize() {
         updateButtonStates();
     }
-
+    // Checks to see if previous level complete before unlocking
     @FXML
     private void onSelectLevel1() {
         try {

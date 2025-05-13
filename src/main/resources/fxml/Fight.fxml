@@ -10,28 +10,28 @@
       fx:controller="edu.miracosta.cs112.finalproject.finalproject.controller.FightController"
       alignment="CENTER" spacing="15" prefWidth="400" prefHeight="500">
 
-    <!-- background stream -->
+
     <ImageView fx:id="streamView"
                fitWidth="350"
                preserveRatio="true"/>
 
-    <!-- show the fish's behavior and instructions -->
+
     <Label fx:id="instructionLabel"
            style="-fx-font-size: 16px; -fx-font-weight: bold;"
            wrapText="true"
            textAlignment="CENTER"
            maxWidth="350"/>
 
-    <!-- feedback for player actions -->
+
     <Label fx:id="feedbackLabel"
            style="-fx-font-size: 14px; -fx-font-weight: bold;"
            textAlignment="CENTER"/>
 
-    <!-- progress indicator -->
+
     <ProgressBar fx:id="fightBar"
                  prefWidth="300"/>
 
-    <!-- choose your action -->
+
     <VBox spacing="10" alignment="CENTER">
         <Button fx:id="slackBtn"
                 text="Give Slack"

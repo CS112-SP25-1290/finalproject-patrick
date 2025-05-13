@@ -53,7 +53,7 @@ public class FightController extends BaseController {
         // Show initial fight behavior
         updateFishBehavior();
 
-        // Listen for "full" → transition to Catch screen
+        // Listen for "full" -> transition to Catch screen
         fightBar.progressProperty().addListener(
                 (ObservableValue<? extends Number> obs, Number oldV, Number newV) -> {
                     if (newV.doubleValue() >= 1.0) {
@@ -81,7 +81,7 @@ public class FightController extends BaseController {
             feedbackLabel.setText("Good move! Keep it up!");
             feedbackLabel.setTextFill(Color.GREEN);
 
-            // Progress based on fish weight - heavier fish are harder
+            // Progress based on fish weight, heavier fish are harder
             double progressIncrease = 0.2 - (currentFish.getWeight() / 50.0);
             progressIncrease = Math.max(0.1, progressIncrease); // Minimum progress
 
@@ -101,11 +101,11 @@ public class FightController extends BaseController {
             }
         }
 
-        // Show next behavior after a brief pause
+        // Show next behavior
         slackBtn.setDisable(true);
         tensionBtn.setDisable(true);
 
-        // Use Timeline for delay instead of Thread.sleep
+        // Use Timeline for delay
         javafx.animation.Timeline timeline = new javafx.animation.Timeline(
                 new javafx.animation.KeyFrame(
                         javafx.util.Duration.seconds(1.5),

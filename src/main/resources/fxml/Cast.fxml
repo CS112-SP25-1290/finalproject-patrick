@@ -8,7 +8,7 @@
       fx:controller="edu.miracosta.cs112.finalproject.finalproject.controller.CastController"
       alignment="CENTER" spacing="20">
 
-      <!-- nested <Image> so the '@' is resolved against the FXML URL -->
+
       <ImageView fitWidth="600" preserveRatio="true">
             <image>
                   <Image url="@../images/stream.png"/>
