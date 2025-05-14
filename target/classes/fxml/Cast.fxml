@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.miracosta.cs112.finalproject.finalproject.controller.CastController"
+      alignment="CENTER" spacing="20">
+
+
+      <ImageView fitWidth="600" preserveRatio="true">
+            <image>
+                  <Image url="@../images/stream.png"/>
+            </image>
+      </ImageView>
+
+      <Button fx:id="castBtn" text="Cast" onAction="#onCast"/>
+      <Button fx:id="reelInBtn" text="Reel In" onAction="#onReel"/>
+      <Button text="Back to Map" onAction="#onBack"/>
+</VBox>

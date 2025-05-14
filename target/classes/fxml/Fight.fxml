@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.miracosta.cs112.finalproject.finalproject.controller.FightController"
+      alignment="CENTER" spacing="15" prefWidth="400" prefHeight="500">
+
+
+    <ImageView fx:id="streamView"
+               fitWidth="350"
+               preserveRatio="true"/>
+
+
+    <Label fx:id="instructionLabel"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;"
+           wrapText="true"
+           textAlignment="CENTER"
+           maxWidth="350"/>
+
+
+    <Label fx:id="feedbackLabel"
+           style="-fx-font-size: 14px; -fx-font-weight: bold;"
+           textAlignment="CENTER"/>
+
+
+    <ProgressBar fx:id="fightBar"
+                 prefWidth="300"/>
+
+
+    <VBox spacing="10" alignment="CENTER">
+        <Button fx:id="slackBtn"
+                text="Give Slack"
+                prefWidth="120"
+                onAction="#onSlack"/>
+        <Button fx:id="tensionBtn"
+                text="Add Tension"
+                prefWidth="120"
+                onAction="#onTension"/>
+    </VBox>
+</VBox>
