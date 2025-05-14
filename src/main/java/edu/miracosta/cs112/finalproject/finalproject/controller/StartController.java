@@ -16,7 +16,7 @@ public class StartController extends BaseController {
     @FXML
     private void initialize() {
         // 1. The file must be on the **runtime** classpath, so the path starts with “/”
-        String path = "/audio/StockTune-Echoes Under Starlight_1747165116.mp3";
+        String path = "/audio/PATRON & NICO BARAN speedy 70.mp3";
         Media media = new Media(Objects.requireNonNull(
                 getClass().getResource(path)).toExternalForm());
 
